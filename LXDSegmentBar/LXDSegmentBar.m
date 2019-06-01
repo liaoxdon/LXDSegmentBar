@@ -7,7 +7,7 @@
 //
 
 #import "LXDSegmentBar.h"
-#import "LXDSegmentBarConfiguration.h"
+
 #import "UIView+LXDSegmentBar.h"
 
 @interface LXDSegmentBar()

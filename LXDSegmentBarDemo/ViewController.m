@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "UIView+LXDSegmentBar.h"
 #import "LXDSegmentBar.h"
-#import "LXDSegmentBarConfiguration.h"
+
 
 @interface ViewController ()<LXDSegmentBarDelegate>
 @property(nonatomic, strong) LXDSegmentBar *segmentBar;

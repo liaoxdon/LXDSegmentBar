@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "LXDSegmentBarConfiguration.h"
+
+
 NS_ASSUME_NONNULL_BEGIN
 
-@class LXDSegmentBarConfiguration, LXDSegmentBar;
+
+@class LXDSegmentBar;
 
 @protocol LXDSegmentBarDelegate <NSObject>
 
