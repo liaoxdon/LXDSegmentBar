@@ -21,63 +21,63 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  背景颜色
  */
-@property(nonatomic, strong)UIColor *segmentBarBgColor;
+@property(nonatomic, strong, readonly)UIColor *segmentBarBgColor;
 
 
 /**
  默认颜色
  */
-@property(nonatomic, strong)UIColor *normalColor;
+@property(nonatomic, strong, readonly)UIColor *normalColor;
 
 
 /**
  选中颜色
  */
-@property(nonatomic, strong)UIColor *selectedColor;
+@property(nonatomic, strong, readonly)UIColor *selectedColor;
 
 
 /**
  指示器颜色
  */
-@property(nonatomic, strong)UIColor *indicatorColour;
+@property(nonatomic, strong, readonly)UIColor *indicatorColour;
 
 /**
  指示器宽度
  */
-@property(nonatomic, assign)CGFloat indicatorW;
+@property(nonatomic, assign, readonly)CGFloat indicatorW;
 
 /**
  指示器高度
  */
-@property(nonatomic, assign)CGFloat indicatorH;
+@property(nonatomic, assign, readonly)CGFloat indicatorH;
 
 /**
  默认字体
  */
-@property(nonatomic, strong)UIFont *normalFont;
+@property(nonatomic, strong, readonly)UIFont *normalFont;
 
 
 /**
  选中字体
  */
-@property(nonatomic, strong)UIFont *selectedFont;
+@property(nonatomic, strong, readonly)UIFont *selectedFont;
 
 /**
  是否平均分配
  */
-@property(nonatomic, assign)BOOL isAverage;
+@property(nonatomic, assign, readonly)BOOL isAverage;
 
 
 /**
  item之间的距离
  */
-@property(nonatomic, assign)CGFloat segmentBarItemsSpace;
+@property(nonatomic, assign, readonly)CGFloat segmentBarItemsSpace;
 
 
 /**
  距离左右两边的间距
  */
-@property(nonatomic, assign)CGFloat segmentBarMargin;
+@property(nonatomic, assign, readonly)CGFloat segmentBarMargin;
 
 
 /**

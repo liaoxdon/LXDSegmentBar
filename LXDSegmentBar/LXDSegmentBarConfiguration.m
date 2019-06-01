@@ -7,6 +7,69 @@
 //
 
 #import "LXDSegmentBarConfiguration.h"
+@interface LXDSegmentBarConfiguration ()
+
+/**
+ 背景颜色
+ */
+@property(nonatomic, strong, readwrite)UIColor *segmentBarBgColor;
+
+/**
+ 默认颜色
+ */
+@property(nonatomic, strong, readwrite)UIColor *normalColor;
+
+
+/**
+ 选中颜色
+ */
+@property(nonatomic, strong, readwrite)UIColor *selectedColor;
+
+
+/**
+ 指示器颜色
+ */
+@property(nonatomic, strong, readwrite)UIColor *indicatorColour;
+
+/**
+ 指示器宽度
+ */
+@property(nonatomic, assign, readwrite)CGFloat indicatorW;
+
+/**
+ 指示器高度
+ */
+@property(nonatomic, assign, readwrite)CGFloat indicatorH;
+
+/**
+ 默认字体
+ */
+@property(nonatomic, strong, readwrite)UIFont *normalFont;
+
+
+/**
+ 选中字体
+ */
+@property(nonatomic, strong, readwrite)UIFont *selectedFont;
+
+/**
+ 是否平均分配
+ */
+@property(nonatomic, assign, readwrite)BOOL isAverage;
+
+
+/**
+ item之间的距离
+ */
+@property(nonatomic, assign, readwrite)CGFloat segmentBarItemsSpace;
+
+
+/**
+ 距离左右两边的间距
+ */
+@property(nonatomic, assign, readwrite)CGFloat segmentBarMargin;
+
+@end;
 
 @implementation LXDSegmentBarConfiguration
 
