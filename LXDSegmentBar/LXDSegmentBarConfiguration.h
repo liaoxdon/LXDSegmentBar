@@ -52,6 +52,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign, readonly)CGFloat indicatorH;
 
 /**
+ 指示器距离底部距离
+ */
+@property(nonatomic, assign, readonly)CGFloat indicatorB;
+
+/**
  默认字体
  */
 @property(nonatomic, strong, readonly)UIFont *normalFont;
@@ -78,6 +83,12 @@ NS_ASSUME_NONNULL_BEGIN
  距离左右两边的间距
  */
 @property(nonatomic, assign, readonly)CGFloat segmentBarMargin;
+
+
+/**
+ 内容向上偏移
+ */
+@property(nonatomic, assign, readonly)CGFloat contentTopE;
 
 
 /**
@@ -111,6 +122,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property(nonatomic, copy, readonly) LXDSegmentBarConfiguration* (^indicatorWidth)(CGFloat);
 
+/**
+ 指示器距离底部距离
+ */
+@property(nonatomic, assign, readonly)LXDSegmentBarConfiguration* (^indicatorBottom)(CGFloat);
+
 
 /**
  配置默认字体
@@ -137,8 +153,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  配置距离左右两边的间距(只在非平均分配有效）
-*/
+ */
 @property(nonatomic, copy, readonly) LXDSegmentBarConfiguration* (^margin)(CGFloat);
+
+/**
+ 配置内容向上偏移
+ */
+@property(nonatomic, assign, readonly) LXDSegmentBarConfiguration* (^contentTopEdge)(CGFloat);
 
 
 + (id)defaultConfiguration;

@@ -42,6 +42,11 @@
 @property(nonatomic, assign, readwrite)CGFloat indicatorH;
 
 /**
+ 指示器距离底部距离
+ */
+@property(nonatomic, assign, readwrite)CGFloat indicatorB;
+
+/**
  默认字体
  */
 @property(nonatomic, strong, readwrite)UIFont *normalFont;
@@ -69,6 +74,11 @@
  */
 @property(nonatomic, assign, readwrite)CGFloat segmentBarMargin;
 
+/**
+ 内容向上偏移
+ */
+@property(nonatomic, assign, readwrite)CGFloat contentTopE;
+
 @end;
 
 @implementation LXDSegmentBarConfiguration
@@ -81,6 +91,8 @@
     configuration.indicatorColour = UIColor.redColor;
     configuration.indicatorW = 5;
     configuration.indicatorH = 2;
+    configuration.indicatorB = 0;
+    configuration.contentTopE = 0;
     configuration.normalFont = [UIFont systemFontOfSize:15];
     configuration.selectedFont = [UIFont systemFontOfSize:15];
     configuration.isAverage = YES;
@@ -131,6 +143,13 @@
     };
 }
 
+- (LXDSegmentBarConfiguration * _Nonnull (^)(CGFloat))indicatorBottom {
+    return ^(CGFloat bottom){
+        self.indicatorB = bottom;
+        return self;
+    };
+}
+
 - (LXDSegmentBarConfiguration * _Nonnull (^)(UIFont * _Nonnull))itemNormalFont {
     return ^(UIFont *font){
         self.normalFont = font;
@@ -162,6 +181,13 @@
 - (LXDSegmentBarConfiguration * _Nonnull (^)(CGFloat))margin {
     return ^(CGFloat margin) {
         self.segmentBarMargin = margin;
+        return self;
+    };
+}
+
+- (LXDSegmentBarConfiguration * _Nonnull (^)(CGFloat))contentTopEdge {
+    return ^(CGFloat contentTopEdge) {
+        self.contentTopE = contentTopEdge;
         return self;
     };
 }

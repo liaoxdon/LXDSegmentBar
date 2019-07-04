@@ -45,7 +45,7 @@
 #pragma mark - 懒加载
 - (UIView *)indicatorView {
     if (!_indicatorView) {
-        _indicatorView = [[UIView alloc] initWithFrame:CGRectMake(0, self.height -self.configuration.indicatorH, self.configuration.indicatorW, self.configuration.indicatorH)];
+        _indicatorView = [[UIView alloc] initWithFrame:CGRectMake(0, self.height - self.configuration.indicatorH - self.configuration.indicatorB, self.configuration.indicatorW, self.configuration.indicatorH)];
         _indicatorView.backgroundColor = self.configuration.indicatorColour;
         [self.contentScrollView addSubview:_indicatorView];
     }
@@ -93,7 +93,15 @@
         [self.contentScrollView addSubview:button];
         [self.itemButtons addObject:button];
         
+        button.contentEdgeInsets = UIEdgeInsetsMake(-self.configuration.contentTopE, 0, 0, 0);
+        
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+        
+        //        if (button.tag == 0) {
+        //            button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        //        } else if (button.tag == items.count - 1) {
+        //            button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+        //        }
     }
     
     [self setNeedsLayout];
@@ -138,6 +146,9 @@
         }
     } else {
         contentOffSetX = self.contentScrollView.contentSize.width - self.contentScrollView.width;
+        if (contentOffSetX < 0) {
+            contentOffSetX = 0;
+        }
     }
     [self.contentScrollView setContentOffset:CGPointMake(contentOffSetX, 0) animated:YES];
 }
@@ -198,7 +209,7 @@
     UIButton *button = self.itemButtons[self.selectedIndex];
     self.indicatorView.width = self.configuration.indicatorW;
     self.indicatorView.height = self.configuration.indicatorH;
-    self.indicatorView.y = self.height - self.indicatorView.height;
+    self.indicatorView.y = self.height - self.indicatorView.height - self.configuration.indicatorB;
     self.indicatorView.centerX = button.centerX;
 }
 
